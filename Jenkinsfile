@@ -31,7 +31,10 @@ pipeline{
             }            
         }
         stage('Deploy to Production in Kubernetes'){
-            
+            steps{
+                script{
+                    kubernetesDeploy (configs: 'mysql.yaml', kubeconfigId: 'kubernetes')
+                }
+            }
         }
-    }
 }
