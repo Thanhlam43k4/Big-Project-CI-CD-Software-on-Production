@@ -9,9 +9,12 @@ WorkFlow of Project:
 
 **Component of project:
     - 1 Jenkins server run on AWS cloud for Continuous Intergration &&  Continuous Deployment
+
     - 1 Kubernetes Cluster on your local Machine: 
+
         + 1 Master-Node: master.xtl run on IP 172.16.10.100  
         + 1 Worker-Node: worker1.xtl run on IP 172.16.10.101
+        
     - 1 Nodejs application with function login with user and password are storaged at MYSQL database
 
 
