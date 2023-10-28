@@ -33,8 +33,19 @@ pipeline{
         stage('Deploy to Production in Kubernetes'){
             steps{
                 script{
-                    kubernetesDeploy (configs: 'mysql.yaml', kubeconfigId: 'kubernetes')
+                    kubernetesDeploy (configs: 'mysql.yaml', kubeconfigId: 'kubernetes') //Deploy mysql-deploy on k8s with port 3306
+                    kubernetesDeploy (configs: 'phpmyadmin.yaml', kubeconfigId: 'kubernetes') //Deploy phpmyadmin on k8s to handle the administration of MYSQL
+                    kubernetesDeploy (configs: 'loginapp.yaml', kubeconfigId: 'kubernetes') // Deploy the application run on port 3000   
                 }
+            }
+        }
+         stage('Testing in Production'){
+            steps{
+                echo '>>>>>Testing in production enviroment<<<<'
+                // sh 'ssh master.xtl@172.16.10.100'           //SSH to master node to review your pod and deployment
+                // sh 'kubectl version'                        //check kubectl version
+                // sh 'kubectl get pods -o wide'               //Check pod loginapp mysql phpmyadmin pod
+                
             }
         }
 }
