@@ -38,9 +38,9 @@ Tutorials:
 
                         vagrant up
 
-    Step2: Config the Jenkins server in AWS
+    Step2: Config the Jenkins server in AWS.
 
-        + Change Directory to Ec2-instance and run this command
+        + Change Directory to Ec2-instance and run this command.
 
                         terraform init
         
@@ -48,20 +48,22 @@ Tutorials:
 
                         terraform apply
         
-        >In the AWS console you can see your EC2 instance with jenkins run in Docker(Ec2 instance already installed docker and run Jenkins in port 8080)
+        >In the AWS console you can see your EC2 instance with jenkins run in Docker(Ec2 instance already installed docker and run Jenkins in port 8080).
 
-        + You have the public IP of Ec2 instance, you can reach your app in  <public-aws-ip>:8080
+        + You have the public IP of Ec2 instance, you can reach your app in  <public-aws-ip>:8080.
 
         The image of pages:
 
 <img align = "center" alt = "coding" width = "400" src = "https://benmatselby.dev/img/jenkins-login-admin.png">
 
-        + After Login you need to install some plugin(KuberenetsContinousDeploy,Docker,Blueocean)
+        + After Login you need to install some plugin(KuberenetsContinousDeploy,Docker,Blueocean).
 
-        + You create a new item with Pipeline Project and you use Pipeline script with SCM option
+        + You create a new item with Pipeline Project and you use Pipeline script with SCM option.
 
-        *Note: You need to write some credentials like (docker registry, kubeconfigid)
+        *Note: You need to write some credentials like (docker registry, kubeconfigid).
 
-        You can run and you can see the project successfully
+        +Before you run this job you must check your K8s cluster is active ?
+
+        >>You can run and you can see the project successfully.
 
 <img align = "center" alt = "coding" width = "600" src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo12kzpGxAUXGK93c_6xvDY5jGHfugEyklNfk4hSkOG-k0VLbpyUn12T1_hLb_6ULHrvc9c6lyfruKLttlEFsWj1kXemLeZf9z2Oz7xFs-WfDg3D8XHW4Dw2tnSYpNxn_BrXRxPUYf_b5Hu6pkydY2k72XgW5F9lMOxhYdAwXy9O60IucVfkoV87q-Mw-P/s981/jenkins_workflow.png"> 
