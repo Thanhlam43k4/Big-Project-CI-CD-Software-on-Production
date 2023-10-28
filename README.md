@@ -2,6 +2,7 @@
 
 <img align = "center" alt = "coding" width = "400" src = "https://res.cloudinary.com/dtbudl0yx/image/fetch/w_2000,f_auto,q_auto,c_fit/https://adamtheautomator.com/content/images/size/w2000/2019/12/jenkins-powershell.png">
 
+
 WorkFlow of Project:
 
 <img align = "center" alt = "coding" width = "600" src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo12kzpGxAUXGK93c_6xvDY5jGHfugEyklNfk4hSkOG-k0VLbpyUn12T1_hLb_6ULHrvc9c6lyfruKLttlEFsWj1kXemLeZf9z2Oz7xFs-WfDg3D8XHW4Dw2tnSYpNxn_BrXRxPUYf_b5Hu6pkydY2k72XgW5F9lMOxhYdAwXy9O60IucVfkoV87q-Mw-P/s981/jenkins_workflow.png"> 
@@ -23,6 +24,7 @@ WorkFlow of Project:
 
 
 ------Prequisites Software-------
+
 1.Terraform
 2.Docker
 3.AWS Configure(IAM role)
@@ -30,7 +32,7 @@ WorkFlow of Project:
 
 *Tutorials:
 
-    Step1: Initialize 2 Virtual Machine run Kuberenets Cluster.
+    Step1: Initialize 2 Virtual Machine run Kubernetes Cluster.
         
         + Change Directory to vm, in the file master-node and worker1-node you run the commands:
 
@@ -46,6 +48,12 @@ WorkFlow of Project:
 
                         terraform apply
         
-        >In the AWS console you can see your EC2 instance with jenkins run in Docker
+        >In the AWS console you can see your EC2 instance with jenkins run in Docker(Ec2 instance already installed docker and run Jenkins in port 8080)
+
+        + You have the public IP of Ec2 instance, you can reach your app in  <public-aws-ip>:8080
+
+        The image of pages:
+        
+        <img align = "center" alt = "coding" width = "400" src = "https://benmatselby.dev/img/jenkins-login-admin.png">
 
 
