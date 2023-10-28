@@ -11,7 +11,7 @@ pipeline{
                 echo 'Pulling successfully'
             }
         }
-        stage('Testing'){
+        stage('Testing in the development environment'){
             steps{
                 echo 'Testing code .....'
             }
