@@ -35,13 +35,21 @@ WorkFlow of Project:
 
 Tutorials:
 
-    Step1: Initialize 2 Virtual Machine run Kubernetes Cluster.
+    Step 1: Initialize 2 Virtual Machine run Kubernetes Cluster.
         
         + Change Directory to vm, in the file master-node and worker1-node you run the commands:
 
                         vagrant up
 
-    Step2: Config the Jenkins server in AWS.
+    Step 2(Update): Create Kuberenets Cluster 
+        + Since the k8s use containerd to its default container runtime,So you need to remove docker and 
+
+          install containerd to use kubeadm command in the file script/installcontainerd.txt
+
+                
+        + SSH to master.xtl and worker1.xtl (with -username root -password 123)
+
+    Step 3: Config the Jenkins server in AWS.
 
         + Change Directory to Ec2-instance and run this command.
 
@@ -65,8 +73,10 @@ Tutorials:
 
         *Note: You need to write some credentials like (docker registry, kubeconfigid).
 
-        +Before you run this job you must check your K8s cluster is active ?
+        +Before you run this job you must check your K8s cluster is active in step 2?
 
         >>You can run and you can see the project successfully.
 
 <img align = "center" alt = "coding" width = "600" src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo12kzpGxAUXGK93c_6xvDY5jGHfugEyklNfk4hSkOG-k0VLbpyUn12T1_hLb_6ULHrvc9c6lyfruKLttlEFsWj1kXemLeZf9z2Oz7xFs-WfDg3D8XHW4Dw2tnSYpNxn_BrXRxPUYf_b5Hu6pkydY2k72XgW5F9lMOxhYdAwXy9O60IucVfkoV87q-Mw-P/s981/jenkins_workflow.png"> 
+
+
