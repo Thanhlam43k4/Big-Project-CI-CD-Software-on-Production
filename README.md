@@ -77,6 +77,7 @@
         
     =>> Use: kubectl get nodes to get cluster created successfully!!!!
 
+        <img align = "center" alt = "coding" width = "400" src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2Y-IoUaAzoDNXQayej0xc5TWMOyehyI-Grz5SKuNJdwihnenDFE86xFzxGKhpbxoVpNqFNmCy0TtHE-02CypGsy6DaNr6PGV6rEt1ikBJOnUnIDSuIGJtulaxBQbn5OiRVzB1ySK00-IOIkd5gO_w5umW8BEfn6zPCoq-ih8stgVkgng3YjfOjQY6ODZf/s965/virtual_machine.png">
 
 
     Step 3: Config the Jenkins server in AWS.
