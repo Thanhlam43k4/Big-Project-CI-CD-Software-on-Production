@@ -26,8 +26,11 @@ WorkFlow of Project:
 ------Prequisites Software-------
 
 1.Terraform
+
 2.Docker
+
 3.AWS Configure(IAM role)
+
 4.Node
 
 Tutorials:
