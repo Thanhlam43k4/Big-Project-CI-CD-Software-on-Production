@@ -1,8 +1,10 @@
 pipeline{
     agent any
-    enviroment{
+    environment{
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
+        SONAR_SCANNER_HOME = tool name: 'sonarscanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        PATH = "${SONAR_SCANNER_HOME}/bin:${env.PATH}"
     }
 
     stages{
@@ -16,12 +18,15 @@ pipeline{
             }
         }
         stage('Sonar Analysis'){
-            enviroment{
-                scannerHome = tool "${SONARSCANNER}"
-            }
             steps{
-                withSonarQubeEnv("{SONARSERVER}"){
-                    sh "sonar-scanner -Dsonar.projectKey=your_project_key -Dsonar.sources=."
+                withEnv(["PATH+SONAR_SCANNER=${tool name: 'sonarscanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin"]) {
+                withSonarQubeEnv('sonarserver') {
+                      sh 'sonar-scanner \
+                        -Dsonar.projectKey=jenkins-check-stage \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://192.168.56.105:9000 \
+                        -Dsonar.login=sqp_0cd2459d203a734bfc169c0c11b85a444947aee4'
+                    }
                 }
             }
         }
