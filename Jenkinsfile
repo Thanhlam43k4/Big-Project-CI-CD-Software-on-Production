@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    enviroment{
+        SONARSERVER = 'sonarserver'
+        SONARSCANNER = 'sonarscanner'
+    }
 
     stages{
         stage('Git Checkouting and Pulling code'){
@@ -11,9 +15,14 @@ pipeline{
                 echo 'Pulling successfully'
             }
         }
-        stage('Testing in the development environment'){
+        stage('Sonar Analysis'){
+            enviroment{
+                scannerHome = tool "${SONARSCANNER}"
+            }
             steps{
-                echo 'Testing code .....'
+                withSonarQubeEnv("{SONARSERVER}"){
+                    sh "sonar-scanner -Dsonar.projectKey=your_project_key -Dsonar.sources=."
+                }
             }
         }
         stage('Build Docker image and push to DockerHub'){
@@ -47,6 +56,6 @@ pipeline{
                 // sh 'kubectl get pods -o wide'               //Check pod loginapp mysql phpmyadmin pod
                 
             }
-        }
+        }   
     }
 }
